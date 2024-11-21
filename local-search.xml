@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>CppLambda</title>
+    <link href="/2024/11/21/CppLambda/"/>
+    <url>/2024/11/21/CppLambda/</url>
+    
+    <content type="html"><![CDATA[<h2 id="C-11-Lambda"><a href="#C-11-Lambda" class="headerlink" title="C++11 Lambda"></a>C++11 Lambda</h2><p>基本用法</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">auto</span> func=[&amp;(捕获列表)](参数列表)-&gt; (返回值) &#123;<br><span class="hljs-comment">//主体</span><br>&#125;;<br></code></pre></td></tr></table></figure><p>基于递归的使用</p><p>错误事例：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">auto</span> factorial = [](<span class="hljs-type">int</span> n) -&gt; <span class="hljs-type">int</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n * <span class="hljs-built_in">factorial</span>(n - <span class="hljs-number">1</span>);<br>&#125;;<br></code></pre></td></tr></table></figure><p><code>auto</code> 关键字用于函数的返回类型时，编译器需要在函数体被完全定义后才能确定返回类型。</p><p>编译器无法确定函数类型，所以报错，过不了编。</p><p>修改：</p><p>通过函数指针，避免编译阶段的检查</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">auto</span> factorial = [](<span class="hljs-type">int</span> n, <span class="hljs-keyword">auto</span> &amp;self) -&gt; <span class="hljs-type">int</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n * <span class="hljs-built_in">self</span>(n - <span class="hljs-number">1</span>);<br>    &#125;;<br></code></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">auto</span> factorial = [](<span class="hljs-type">int</span> n, <span class="hljs-keyword">auto</span> &amp;&amp;self) -&gt; <span class="hljs-type">int</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n * <span class="hljs-built_in">self</span>(n - <span class="hljs-number">1</span>);<br>    &#125;;<br><span class="hljs-comment">//利用c++11新特性，右值引用，避免复制，重复利用同一个lambda表达式</span><br></code></pre></td></tr></table></figure><p>使用function，直接在编译阶段确定，即明确类型</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++">std::function&lt;<span class="hljs-type">int</span>(<span class="hljs-type">int</span>)&gt; factorial = [](<span class="hljs-type">int</span> n) -&gt; <span class="hljs-type">int</span> &#123;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n * <span class="hljs-built_in">factorial</span>(n - <span class="hljs-number">1</span>);<br>    &#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>C++</category>
+      
+      <category>C++11新特性</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>语言细节</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ABC380</title>
     <link href="/2024/11/17/ABC380/"/>
     <url>/2024/11/17/ABC380/</url>
