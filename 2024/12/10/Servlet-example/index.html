@@ -19,21 +19,24 @@
   <meta name="author" content="Hruish">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JavaScript异步处理Promise每个Promise对象三种状态：pending，resolve，reject 当从pending状态转化成其它两个之一时就不可改变了 快速实例12345new Promise(resolve&#x3D;&gt;&#123;  	resolve(&quot;hello world&quot;);&#125;).then(data&#x3D;&gt;&#123;  	consol">
+    <meta name="description" content="Maven项目管理以及快速创建Servlet实例（基于MacOS）Maven配置开发环境利用homebrew安装 1brew install maven  检查是否安装完成 1mvn -v  最后，在VsCode上安装maven插件 然后通过插件利用maven创建java项目 目录结构 其中,pom.xml很重要，项目的配置文件 1234567891011121314151617181920212">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript异步处理">
-<meta property="og:url" content="http://c-messi.github.io/2024/11/30/Js-async/index.html">
+<meta property="og:title" content="Servlet_example">
+<meta property="og:url" content="http://c-messi.github.io/2024/12/10/Servlet-example/index.html">
 <meta property="og:site_name" content="Hruish">
-<meta property="og:description" content="JavaScript异步处理Promise每个Promise对象三种状态：pending，resolve，reject 当从pending状态转化成其它两个之一时就不可改变了 快速实例12345new Promise(resolve&#x3D;&gt;&#123;  	resolve(&quot;hello world&quot;);&#125;).then(data&#x3D;&gt;&#123;  	consol">
+<meta property="og:description" content="Maven项目管理以及快速创建Servlet实例（基于MacOS）Maven配置开发环境利用homebrew安装 1brew install maven  检查是否安装完成 1mvn -v  最后，在VsCode上安装maven插件 然后通过插件利用maven创建java项目 目录结构 其中,pom.xml很重要，项目的配置文件 1234567891011121314151617181920212">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-29T16:59:04.000Z">
-<meta property="article:modified_time" content="2024-11-29T17:51:12.778Z">
+<meta property="og:image" content="http://c-messi.github.io/image/dir1.png">
+<meta property="og:image" content="http://c-messi.github.io/image/suc.png">
+<meta property="article:published_time" content="2024-12-09T16:06:53.000Z">
+<meta property="article:modified_time" content="2024-12-09T16:11:55.108Z">
 <meta property="article:author" content="Hruish">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://c-messi.github.io/image/dir1.png">
   
   
   
-  <title>JavaScript异步处理 - Hruish</title>
+  <title>Servlet_example - Hruish</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JavaScript异步处理"></span>
+            <span id="subtitle" data-typed-text="Servlet_example"></span>
           
         </div>
 
@@ -210,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-30 00:59" pubdate>
-          2024年11月30日 凌晨
+        <time datetime="2024-12-10 00:06" pubdate>
+          2024年12月10日 凌晨
         </time>
       </span>
     
@@ -222,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          584 字
+          641 字
         
       </span>
     
@@ -233,7 +236,7 @@
         
         
         
-          5 分钟
+          6 分钟
         
       </span>
     
@@ -270,34 +273,59 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">JavaScript异步处理</h1>
+            <h1 id="seo-header">Servlet_example</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="JavaScript异步处理"><a href="#JavaScript异步处理" class="headerlink" title="JavaScript异步处理"></a>JavaScript异步处理</h3><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>每个Promise对象三种状态：pending，resolve，reject</p>
-<p>当从pending状态转化成其它两个之一时就不可改变了</p>
-<h4 id="快速实例"><a href="#快速实例" class="headerlink" title="快速实例"></a>快速实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span>=&gt;</span>&#123;<br>  	<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;hello world&quot;</span>);<br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">data</span>=&gt;</span>&#123;<br>  	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;);<br></code></pre></td></tr></table></figure>
+                <h2 id="Maven项目管理以及快速创建Servlet实例（基于MacOS）"><a href="#Maven项目管理以及快速创建Servlet实例（基于MacOS）" class="headerlink" title="Maven项目管理以及快速创建Servlet实例（基于MacOS）"></a>Maven项目管理以及快速创建Servlet实例（基于MacOS）</h2><h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><h4 id="配置开发环境"><a href="#配置开发环境" class="headerlink" title="配置开发环境"></a>配置开发环境</h4><p>利用homebrew安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install maven<br></code></pre></td></tr></table></figure>
 
-<p>链式处理，使得能在异步中同步处理，获得更清晰的结构，避免回调地狱</p>
-<h4 id="更加完整"><a href="#更加完整" class="headerlink" title="更加完整"></a>更加完整</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>)=&gt;</span>&#123;<br>  	<span class="hljs-comment">//....operation</span><br>  	<span class="hljs-keyword">if</span>(<span class="hljs-comment">/* successful condition */</span>)&#123;<br>      	<span class="hljs-title function_">resolve</span>(value)<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>      	<span class="hljs-title function_">reject</span>(err)<br>    &#125;<br>&#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">value</span>=&gt;</span>&#123;&#125;,<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;&#125;)<br>.<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">value</span>=&gt;</span>&#123;&#125;,<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span>&#123;&#125;)<br>.<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span> &#123;<br>  	<span class="hljs-comment">//resolve出现问题,进行异常处理</span><br>&#125;)<br>.<span class="hljs-title function_">finally</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>  	<span class="hljs-comment">//do something</span><br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>检查是否安装完成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mvn -v<br></code></pre></td></tr></table></figure>
 
-<h4 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h4><p>Promise.all()，接受一串Promise并返回这串Promise的resolve串，注意全部Promise均为resolve才返回resolve</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">build</span>(<span class="hljs-params">x</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-title function_">resolve</span>(x);<br>    &#125;);<br>&#125;<br><br><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>([<span class="hljs-title function_">build</span>(<span class="hljs-number">1</span>), <span class="hljs-title function_">build</span>(<span class="hljs-number">2</span>), <span class="hljs-title function_">build</span>(<span class="hljs-number">3</span>)])<br>    .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">of</span> res) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>        &#125;;<br>        res.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);<br>        &#125;);<br>        <span class="hljs-comment">//遍历对象的key</span><br>        <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> res) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res[i]);<br>        &#125;;<br>    &#125;);<br></code></pre></td></tr></table></figure>
+<p>最后，在VsCode上安装maven插件</p>
+<p>然后通过插件利用maven创建java项目</p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><p><img src="/./image/dir1.png" srcset="/img/loading.gif" lazyload></p>
+<p>其中,pom.xml很重要，项目的配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.hruish.learnmaven<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>demo1<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>war<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>  <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>Promise.race，返回最先完成的那个Promise的状态，注意到只是先返回结果并对先返回的处理，不代表没结束的不执行了</p>
-<p>可以用于限制某个操作的时间，到达限制后直接进入回调</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">build</span>(<span class="hljs-params">x, delay</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-title function_">resolve</span>(x);<br>        &#125;, delay);<br>    &#125;);<br>&#125;<br><br><span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">race</span>([<span class="hljs-title function_">build</span>(<span class="hljs-number">1</span>, <span class="hljs-number">500</span>), <span class="hljs-title function_">build</span>(<span class="hljs-number">2</span>, <span class="hljs-number">1000</span>), <span class="hljs-title function_">build</span>(<span class="hljs-number">3</span>, <span class="hljs-number">2000</span>)])<br>    .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res);<br>    &#125;);<br></code></pre></td></tr></table></figure>
+<p>groupId,artifactId,version为项目的基本标识</p>
+<p>Properties中maven.compiler.source和maven.compiler.target指导了源码编译采用的JDK版本和编译后文件采用的JDK版本</p>
+<p>Dependencies代表引入的库，在pom.xml写入，maven会自动配置进来</p>
+<p>packaging代表打包方式</p>
+<p>build表示生成文件的一些属性</p>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-keyword">mvn</span> clean<br></code></pre></td></tr></table></figure>
 
-<h3 id="async与await"><a href="#async与await" class="headerlink" title="async与await"></a>async与await</h3><p>async给函数标记为异步模式，且返回Promise对象（若有return返回值，会被Promise.resolve处理），可以进行Promise操作</p>
-<p>await只能用于async函数内部，当作用于Promise对象时，会阻碍async函数并等待这个Promise返回，可以用于处理回调地狱，即按照同步顺序处理异步，获得更清晰结构</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test1</span>(<span class="hljs-params">x</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-title function_">resolve</span>(x) &#125;, <span class="hljs-number">1000</span>);<br>    &#125;);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test2</span>(<span class="hljs-params">x</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123; <span class="hljs-title function_">resolve</span>(x) &#125;, <span class="hljs-number">1000</span>);<br>    &#125;);<br>&#125;<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">test3</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">test1</span>(<span class="hljs-string">&quot;hello world&quot;</span>);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>    <span class="hljs-keyword">let</span> data1 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">test2</span>(data + <span class="hljs-string">&quot; okkk&quot;</span>);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data1);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello Hruish&quot;</span>;<br>&#125;<br><br><span class="hljs-title function_">test3</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res);<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-keyword">mvn</span> complie<br></code></pre></td></tr></table></figure>
 
-<p>await也返回Promise对象，注意看下列例子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//可以正常运行</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">test3</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">await</span> <span class="hljs-title function_">test1</span>(<span class="hljs-string">&quot;hello world&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res);<br>    &#125;);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello Hruish&quot;</span>;<br>&#125;<br><br><span class="hljs-comment">//报错</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">test3</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">let</span> data=<span class="hljs-keyword">await</span> <span class="hljs-title function_">test1</span>(<span class="hljs-string">&quot;hello world&quot;</span>)<br>    data.<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res);<br>    &#125;);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello Hruish&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">mvn <span class="hljs-keyword">package</span><br></code></pre></td></tr></table></figure>
 
-<p>即当用值去捕获await返回就变成了resolve的值了，不能继续当Promise用</p>
-<h3 id="一些实践"><a href="#一些实践" class="headerlink" title="一些实践"></a>一些实践</h3><h3 id="Promise源码探索"><a href="#Promise源码探索" class="headerlink" title="Promise源码探索"></a>Promise源码探索</h3>
+<p>用于快速打包项目</p>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><p>Apache开发的开源免费服务器，快速解析http请求</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>去官网下载对应Tomcat版本，与servlet版本相关，这里选择10.1.33，选择.zip或tar.gz文件下载即可</p>
+<p>下载后将文件解压到library文件夹下，然后进入bin文件夹下，执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chmod +x *.sh<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sh ./startup.sh<br></code></pre></td></tr></table></figure>
+
+<p>若能出现演示网页则配置成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sh ./shutdown.sh<br></code></pre></td></tr></table></figure>
+
+<p>该指令关闭服务器</p>
+<h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><p>修改pom.xml，从而引入servlet包，并使打包后的项目名为hello</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>jakarta.servlet<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jakarta.servlet-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">finalName</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">finalName</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后在src下创建HelloServlet.java文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hruish.learnmaven;<br><br><span class="hljs-keyword">import</span> jakarta.servlet.*;<br><span class="hljs-keyword">import</span> jakarta.servlet.annotation.WebServlet;<br><span class="hljs-keyword">import</span> jakarta.servlet.http.*;<br><span class="hljs-keyword">import</span> java.io.*;<br><br><span class="hljs-comment">// WebServlet注解表示这是一个Servlet，并映射到地址/:</span><br><span class="hljs-meta">@WebServlet(urlPatterns = &quot;/&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span> &#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span><br>            <span class="hljs-keyword">throws</span> ServletException, IOException &#123;<br>        <span class="hljs-comment">// 设置响应类型:</span><br>        resp.setContentType(<span class="hljs-string">&quot;text/html&quot;</span>);<br>        <span class="hljs-comment">// 获取输出流:</span><br>        <span class="hljs-type">PrintWriter</span> <span class="hljs-variable">pw</span> <span class="hljs-operator">=</span> resp.getWriter();<br>        <span class="hljs-comment">// 写入响应:</span><br>        pw.write(<span class="hljs-string">&quot;&lt;h1&gt;Hello, world!&lt;/h1&gt;&quot;</span>);<br>        <span class="hljs-comment">// 最后不要忘记flush强制输出:</span><br>        pw.flush();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>再打开命令行，打包生成hello.war</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mvn clean package<br></code></pre></td></tr></table></figure>
+
+<p>将hello.war放入解压后的Tomcat的webapps目录下，再用对应指令打开Tomcat服务器即可</p>
+<p><img src="/./image/suc.png" srcset="/img/loading.gif" lazyload></p>
+<p>访问对应端口，显示上述结果，基本Servlet实现</p>
+
                 
               </div>
             
@@ -315,13 +343,20 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" class="category-chain-item">JavaScript</a>
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%90%8E%E7%AB%AF/Java/Enterprise-Edition/" class="category-chain-item">Enterprise Edition</a>
+  
+  
+
   
 
   
@@ -342,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JavaScript异步处理</div>
-      <div>http://c-messi.github.io/2024/11/30/Js-async/</div>
+      <div>Servlet_example</div>
+      <div>http://c-messi.github.io/2024/12/10/Servlet-example/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月30日</div>
+          <div>2024年12月10日</div>
         </div>
       
       
@@ -387,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/10/Servlet-example/" title="Servlet_example">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Servlet_example</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/28/DS-12/" title="数据结构实验12-图综合&amp;静态查找&amp;二叉排序树1">
-                        <span class="hidden-mobile">数据结构实验12-图综合&amp;静态查找&amp;二叉排序树1</span>
+                      <a href="/2024/11/30/Js-async/" title="JavaScript异步处理">
+                        <span class="hidden-mobile">JavaScript异步处理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
