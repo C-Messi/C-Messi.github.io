@@ -27,7 +27,7 @@
 <meta property="og:description" content="Spring Rest通常输入输出都是JSON，利用其进行客户端与服务器的信息交互 本文结合SpringMVC演示 配置pom.xml 123456&lt;!-- Json解析 --&gt;&lt;dependency&gt;        &lt;groupId&gt;com.fasterxml.jackson.core&lt;&#x2F;groupId&gt;        &lt;artifactId">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-29T19:10:33.000Z">
-<meta property="article:modified_time" content="2024-12-29T19:12:13.565Z">
+<meta property="article:modified_time" content="2024-12-29T19:14:16.009Z">
 <meta property="article:author" content="Hruish">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          468 字
+          470 字
         
       </span>
     
@@ -289,7 +289,7 @@
 <h4 id="关于curl命令"><a href="#关于curl命令" class="headerlink" title="关于curl命令"></a>关于curl命令</h4><p>可以发送各种应用层协议，方便测试，这里展示常用的http指令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl -v # 详细连接过程信息<br>curl -X GET url # get请求<br>curl -X POST url -d &quot;xxxxx&quot; # post请求 -d表示-data 即发送的数据<br>curl -H &quot;xxxx:xxxx&quot; url # 发送带有 HTTP 头的请求<br>curl -H &quot;Content-Type: application/json&quot; -X POST -d &#x27;&#123;&quot;key&quot;:&quot;value&quot;&#125;&#x27; url # 发送JSON<br>curl -F &quot;file=@localfile.txt&quot; http://example.com/upload # 上传文件<br>curl -O http://example.com/file.zip # 下载文件<br>curl -D headers.txt url # 保存响应头和正文<br></code></pre></td></tr></table></figure>
 
-<h3 id="RestController注解"><a href="#RestController注解" class="headerlink" title="RestController注解"></a>RestController注解</h3><p>省去每个请求都要设置接受JSON和返回JSON，编写起来更简洁</p>
+<h3 id="使用RestController注解"><a href="#使用RestController注解" class="headerlink" title="使用RestController注解"></a>使用RestController注解</h3><p>省去每个请求都要设置接受JSON和返回JSON，编写起来更简洁</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping(&quot;/api&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> &#123;<br>    <span class="hljs-meta">@PostMapping(&quot;/user&quot;)</span><br>    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">getUser</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> User user)</span> &#123;<br>        <span class="hljs-keyword">return</span> user;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>利用Spring REST能轻松的处理JSON输入和输出服务</p>
