@@ -27,7 +27,7 @@
 <meta property="og:description" content="链接器解析静态库与Makefile应用基本运作流程维护E,U,D三个集合，从左往右按顺序处理每个文件 1linux&gt;gcc foo.c libx.a liby.a libx.a  对于每个文件，若有U中的定义，将其转化为D，然后将自己的引用丢入U 因此要谨慎处理这些依赖顺序，一般由高层向底层 特别地，考虑这样一种情况：main引用A，A引用B，B又引用回A，需要这样链接 1linux&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-01-03T11:36:08.000Z">
-<meta property="article:modified_time" content="2025-01-03T11:39:42.171Z">
+<meta property="article:modified_time" content="2025-01-04T09:58:56.320Z">
 <meta property="article:author" content="Hruish">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          639 字
+          637 字
         
       </span>
     
@@ -313,7 +313,7 @@
 <p>实际编译时，可以建立一个build目录，存放输出文件，这样可以将输出与源文件隔离开来</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-comment"># 定义编译器</span><br>CXX = g++<br><span class="hljs-comment"># 定义编译选项</span><br>CXXFLAGS = -Wall -g<br><br><span class="hljs-comment"># 定义输出目录</span><br>OUTPUT_DIR = build<br><br><span class="hljs-comment"># 创建输出目录,$执行makefile中的定义</span><br><span class="hljs-variable">$(<span class="hljs-built_in">shell</span> mkdir -p <span class="hljs-variable">$(OUTPUT_DIR)</span>)</span><br><br><span class="hljs-comment"># 定义源启动文件</span><br>MAINSRC = a.cpp<br>MAIN = <span class="hljs-variable">$(<span class="hljs-built_in">addprefix</span> <span class="hljs-variable">$(OUTPUT_DIR)</span>/, $(MAINSRC:.cpp=.o)</span>)<br><br><span class="hljs-comment"># 定义要编译的库源文件</span><br>LIBSRCS = b.cpp c.cpp<br><br><span class="hljs-comment"># 定义生成的目标文件,文本拼接</span><br>LIBO = <span class="hljs-variable">$(<span class="hljs-built_in">addprefix</span> <span class="hljs-variable">$(OUTPUT_DIR)</span>/, $(LIBSRCS:.cpp=.o)</span>)<br><br><span class="hljs-comment"># 定义最终的可执行文件</span><br>EXEC = <span class="hljs-variable">$(OUTPUT_DIR)</span>/test<br><br><span class="hljs-comment"># 默认目标</span><br><span class="hljs-section">all: <span class="hljs-variable">$(EXEC)</span></span><br><br><span class="hljs-comment"># 链接目标</span><br><span class="hljs-variable">$(EXEC)</span>: <span class="hljs-variable">$(MAIN)</span> <span class="hljs-variable">$(OUTPUT_DIR)</span>/mylib.a<br>	<span class="hljs-variable">$(CXX)</span> <span class="hljs-variable">$(CXXFLAGS)</span> -o <span class="hljs-variable">$@</span> <span class="hljs-variable">$(MAIN)</span> <span class="hljs-variable">$(OUTPUT_DIR)</span>/mylib.a<br><br><span class="hljs-comment"># 静态库目标</span><br><span class="hljs-variable">$(OUTPUT_DIR)</span>/mylib.a: <span class="hljs-variable">$(LIBO)</span><br>	ar rcs <span class="hljs-variable">$@</span> <span class="hljs-variable">$(LIBO)</span><br><br><span class="hljs-comment"># 编译所有cpp文件准备用于链接,相当于for语句,但是实际只会根据依赖执行</span><br><span class="hljs-variable">$(OUTPUT_DIR)</span>/%.o: %.cpp<br>	<span class="hljs-variable">$(CXX)</span> <span class="hljs-variable">$(CXXFLAGS)</span> -c <span class="hljs-variable">$&lt;</span> -o <span class="hljs-variable">$@</span><br><br><span class="hljs-comment"># 清理目标</span><br><span class="hljs-section">clean:</span><br>	rm -rf <span class="hljs-variable">$(OUTPUT_DIR)</span><br><br><span class="hljs-comment"># 定义make任务</span><br><span class="hljs-meta"><span class="hljs-keyword">.PHONY</span>: all clean</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>设计好依赖关系，最好保证调用的拓扑结构（即无环），比如设计成树形结构，由根往下依赖，也便于编写Makefile</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>设计好依赖关系，最好保证调用的拓扑结构（DAG），比如设计成树形结构，由根往下依赖，也便于编写Makefile</p>
 
                 
               </div>
